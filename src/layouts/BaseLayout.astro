@@ -7,9 +7,9 @@ import Header from '../components/header.astro';
 
 <html lang="en">
   <Head />
-  <body class="bg-main text-main">
+  <body class="flex flex-col gap-24 break-words bg-main text-main antialiased">
     <Header />
-    <main transition:animate={fade({ duration: '0.15s' })}>
+    <main transition:animate={fade({ duration: '0.1s' })} class="container mx-auto">
       <slot />
     </main>
   </body>

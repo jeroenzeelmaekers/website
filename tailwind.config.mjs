@@ -20,6 +20,15 @@ export default {
       borderColor: {
         main: 'rgb(var(--color-border-main) / <alpha-value>)',
       },
+      container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '8rem',
+        xl: '10rem',
+        '2xl': '14rem',
+      },
+    },
     },
   },
   plugins: [],
