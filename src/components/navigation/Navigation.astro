@@ -8,8 +8,8 @@ const navigation = [
 ];
 ---
 
-<nav class="font-serif">
-  <ul class="flex flex-row justify-center gap-2 p-2">
+<nav class="flex-1 font-serif">
+  <ul class="flex flex-row justify-center gap-2 pt-4">
     {navigation.map((item) => <NavigationItem url={item.url} label={item.label} />)}
   </ul>
 </nav>

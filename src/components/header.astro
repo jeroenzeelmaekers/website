@@ -1,7 +1,11 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
 import Navigation from './navigation/Navigation.astro';
 ---
 
-<header>
+<header class="flex flex-row items-center justify-center">
   <Navigation />
+  <div class="fixed right-4 top-4">
+    <ThemeToggle />
+  </div>
 </header>
