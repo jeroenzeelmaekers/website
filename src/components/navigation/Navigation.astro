@@ -1,0 +1,15 @@
+---
+import NavigationItem from './NavigationItem.astro';
+
+const navigation = [
+  { url: '/', label: 'Home' },
+  { url: '/projects', label: 'Projects' },
+  { url: '/history', label: 'History' },
+];
+---
+
+<nav class="font-serif">
+  <ul class="flex flex-row justify-center gap-2 p-2">
+    {navigation.map((item) => <NavigationItem url={item.url} label={item.label} />)}
+  </ul>
+</nav>

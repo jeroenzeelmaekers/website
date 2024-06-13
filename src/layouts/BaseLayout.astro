@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+import { fade } from 'astro/virtual-modules/transitions.js';
+import Head from '../components/head.astro';
+import Header from '../components/header.astro';
+---
+
+<html lang="en">
+  <Head />
+  <body class="bg-main text-main">
+    <Header />
+    <main transition:animate={fade({ duration: '0.15s' })}>
+      <slot />
+    </main>
+  </body>
+</html>
