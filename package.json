@@ -1,5 +1,8 @@
 {
-  "name": "jeroenzeelmaekers.com",
+  "name": "website",
+  "author": "Jeroen Zeelmaekers",
+  "description": "My little corner of The Web.",
+  "repo": "https://github.com/jeroenzeelmaekers/website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
