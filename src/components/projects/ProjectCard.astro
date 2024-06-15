@@ -19,7 +19,8 @@ const { title, description, url, urlLabel } = Astro.props;
       <a
         href={url}
         class="w-fit font-serif text-sm italic hover:underline hover:decoration-dotted focus-visible:rounded"
-        >{urlLabel}</a
+        target="_blank"
+        rel="noopener noreferrer">{urlLabel}</a
       >
     </div>
   </article>
