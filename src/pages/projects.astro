@@ -1,5 +1,17 @@
 ---
+import type { ProjectCard as ProjectCardInterface } from '../components/projects/ProjectCard.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects: ProjectCardInterface[] = [
+  {
+    title: 'simls',
+    description:
+      'Simls is a cli tool that allows for managing of android emulators & iOS simulators.',
+    url: 'https://github.com/jeroenzeelmaekers/simls',
+    urlLabel: 'https://github.com/jeroenzeelmaekers/simls',
+  },
+];
 ---
 
 <BaseLayout>
@@ -7,6 +19,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="flex flex-col gap-3">
       <h1 class="w-fit font-serif text-2xl italic tracking-tight sm:text-4xl">Projects</h1>
       <p class="w-fit text-sm tracking-tight">A collection of the things I've worked on.</p>
+    </section>
+    <section>
+      <ul class="list-disc">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </ul>
     </section>
   </div>
 </BaseLayout>
