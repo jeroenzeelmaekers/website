@@ -5,11 +5,11 @@ import Head from '../components/head.astro';
 import Header from '../components/header.astro';
 ---
 
-<html lang="en">
+<html lang="en" transition:animate={fade({ duration: '0.5s' })}>
   <Head />
   <body class="flex flex-col gap-24 break-words bg-main text-main antialiased">
     <Header />
-    <main transition:animate={fade({ duration: '0.1s' })} class="container mx-auto">
+    <main class="container mx-auto">
       <slot />
     </main>
   </body>
