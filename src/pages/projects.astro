@@ -5,6 +5,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects: ProjectCardInterface[] = [
   {
+    title: 'backtrail',
+    description:
+      'Discover Backtrail, where hikers share trails and gear. Connect with fellow adventurers, post your hikes, and find expert recommendations for your next journey.',
+    url: 'https://github.com/backtrailapp',
+    urlLabel: 'https://github.com/backtrailapp',
+  },
+  {
     title: 'simls',
     description:
       'Simls is a cli tool that allows for managing of android emulators & iOS simulators.',
@@ -21,7 +28,7 @@ const projects: ProjectCardInterface[] = [
       <p class="w-fit text-sm tracking-tight">A collection of the things I'm working on.</p>
     </section>
     <section>
-      <ul class="list-disc">
+      <ul class="flex list-disc flex-col gap-8">
         {projects.map((project) => <ProjectCard {...project} />)}
       </ul>
     </section>
