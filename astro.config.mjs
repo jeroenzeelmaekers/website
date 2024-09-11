@@ -1,21 +1,22 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { loadEnv } from 'vite';
+import sanity from '@sanity/astro';
+import react from '@astrojs/react';
+import vercel from '@astrojs/vercel/serverless';
+
 const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
   import.meta.env.MODE,
   process.cwd(),
   ''
 );
 
-import sanity from '@sanity/astro';
-import react from '@astrojs/react';
-
 const projectId = PUBLIC_SANITY_PROJECT_ID;
 const dataset = PUBLIC_SANITY_DATASET;
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   integrations: [
     tailwind(),
     sanity({
@@ -27,4 +28,5 @@ export default defineConfig({
     }),
     react(),
   ],
+  adapter: vercel(),
 });
