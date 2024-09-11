@@ -1,26 +1,28 @@
 ---
 export interface ProjectCard {
-  title: string;
+  name: string;
   description: string;
-  url: string;
-  urlLabel: string;
+  url: {
+    link: string;
+    label: string;
+  };
 }
 
 interface Props extends ProjectCard {}
 
-const { title, description, url, urlLabel } = Astro.props;
+const { name, description, url } = Astro.props;
 ---
 
 <li>
   <article class="flex flex-col gap-3">
-    <h2 class="font-serif text-2xl font-medium">{title}</h2>
+    <h2 class="font-serif text-2xl font-medium">{name}</h2>
     <div class="flex flex-col gap-1">
       <p>{description}</p>
       <a
-        href={url}
+        href={url.link}
         class="w-fit font-serif text-sm italic hover:underline hover:decoration-dotted focus-visible:rounded"
         target="_blank"
-        rel="noopener noreferrer">{urlLabel}</a
+        rel="noopener noreferrer">{url.label}</a
       >
     </div>
   </article>
