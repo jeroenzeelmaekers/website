@@ -2,23 +2,11 @@
 import type { ProjectCard as ProjectCardInterface } from '../components/projects/ProjectCard.astro';
 import ProjectCard from '../components/projects/ProjectCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { loadQuery } from '../sanity/lib/load-query';
 
-const projects: ProjectCardInterface[] = [
-  {
-    title: 'backtrail',
-    description:
-      'Discover Backtrail, where hikers share trails and gear. Connect with fellow adventurers, post your hikes, and find expert recommendations for your next journey.',
-    url: 'https://github.com/backtrailapp',
-    urlLabel: 'https://github.com/backtrailapp',
-  },
-  {
-    title: 'simls',
-    description:
-      'Simls is a cli tool that allows for managing of android emulators & iOS simulators.',
-    url: 'https://github.com/jeroenzeelmaekers/simls',
-    urlLabel: 'https://github.com/jeroenzeelmaekers/simls',
-  },
-];
+const { data: projects } = await loadQuery<ProjectCardInterface[]>({
+  query: `*[_type=="project"]`,
+});
 ---
 
 <BaseLayout>
