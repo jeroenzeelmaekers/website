@@ -1,13 +1,15 @@
 ---
 import '../styles/global.css';
 import { fade } from 'astro/virtual-modules/transitions.js';
-import Head from '../components/head.astro';
-import Header from '../components/header.astro';
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import PostHog from '../components/PostHog.astro';
 ---
 
 <html lang="en" transition:animate={fade({ duration: '0.5s' })}>
   <Head />
   <body class="flex flex-col gap-24 break-words bg-main text-main antialiased">
+    <PostHog />
     <Header />
     <main class="container mx-auto">
       <slot />
