@@ -20,6 +20,7 @@
     "@sanity/astro": "^3.1.6",
     "@sanity/client": "^6.21.3",
     "@sanity/visual-editing": "^2.1.9",
+    "@sentry/astro": "^8.30.0",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.10.2",
